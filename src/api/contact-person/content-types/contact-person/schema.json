@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_persons",
+  "info": {
+    "singularName": "contact-person",
+    "pluralName": "contact-persons",
+    "displayName": "Contact Person"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "contact_id": {
+      "type": "string",
+      "required": true
+    },
+    "contact_person_id": {
+      "type": "string",
+      "required": true
+    },
+    "salutation": {
+      "type": "string",
+      "maxlength": 25
+    },
+    "first_name": {
+      "type": "string",
+      "maxlength": 100
+    },
+    "last_name": {
+      "type": "string",
+      "maxlength": 100
+    },
+    "email": {
+      "type": "string",
+      "maxlength": 100
+    },
+    "phone": {
+      "type": "string",
+      "maxlength": 50
+    },
+    "mobile": {
+      "type": "string",
+      "maxlength": 50
+    },
+    "is_primary_contact": {
+      "type": "boolean"
+    },
+    "skype": {
+      "type": "string",
+      "maxlength": 50
+    },
+    "designation": {
+      "type": "string",
+      "maxlength": 50
+    },
+    "department": {
+      "type": "string",
+      "maxlength": 50
+    },
+    "is_added_in_portal": {
+      "type": "boolean"
+    }
+  }
+}

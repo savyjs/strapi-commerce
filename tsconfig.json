@@ -1,5 +1,6 @@
 {
   "extends": "@strapi/typescript-utils/tsconfigs/server",
+  "allowImportingTsExtensions": true,
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "."

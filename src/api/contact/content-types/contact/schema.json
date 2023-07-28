@@ -1,0 +1,153 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "contact_id": {
+      "type": "string",
+      "required": true
+    },
+    "contact_name": {
+      "type": "string",
+      "required": true,
+      "maxlength": 200
+    },
+    "company_name": {
+      "type": "string",
+      "maxlength": 200
+    },
+    "has_transaction": {
+      "type": "boolean"
+    },
+    "contact_type": {
+      "type": "enumeration",
+      "enum": [
+        "customer",
+        "vendor"
+      ]
+    },
+    "is_linked_with_zohocrm": {
+      "type": "boolean"
+    },
+    "website": {
+      "type": "string"
+    },
+    "primary_contact_id": {
+      "type": "string"
+    },
+    "payment_terms": {
+      "type": "integer"
+    },
+    "payment_terms_label": {
+      "type": "string"
+    },
+    "currency_id": {
+      "type": "string"
+    },
+    "currency_code": {
+      "type": "string"
+    },
+    "currency_symbol": {
+      "type": "string"
+    },
+    "language_code": {
+      "type": "enumeration",
+      "enum": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "ja",
+        "nl",
+        "pt",
+        "sv",
+        "zh"
+      ]
+    },
+    "outstanding_receivable_amount": {
+      "type": "integer"
+    },
+    "outstanding_receivable_amount_bcy": {
+      "type": "integer"
+    },
+    "unused_credits_receivable_amount": {
+      "type": "integer"
+    },
+    "unused_credits_receivable_amount_bcy": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "payment_reminder_enabled": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "datetime"
+    },
+    "last_modified_time": {
+      "type": "datetime"
+    },
+    "is_taxable": {
+      "type": "boolean"
+    },
+    "tax_id": {
+      "type": "string"
+    },
+    "tax_name": {
+      "type": "string"
+    },
+    "tax_percentage": {
+      "type": "float"
+    },
+    "tax_authority_id": {
+      "type": "string"
+    },
+    "tax_exemption_id": {
+      "type": "string"
+    },
+    "tax_authority_name": {
+      "type": "string"
+    },
+    "tax_exemption_code": {
+      "type": "string"
+    },
+    "place_of_contact": {
+      "type": "string"
+    },
+    "gst_no": {
+      "type": "string"
+    },
+    "vat_treatment": {
+      "type": "string"
+    },
+    "tax_treatment": {
+      "type": "string"
+    },
+    "tax_regime": {
+      "type": "string"
+    },
+    "is_tds_registered": {
+      "type": "boolean"
+    },
+    "gst_treatment": {
+      "type": "string"
+    }
+  }
+}

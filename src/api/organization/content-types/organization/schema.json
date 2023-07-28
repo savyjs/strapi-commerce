@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "organization"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "organization_id": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "is_logo_uploaded": {
+      "type": "string"
+    },
+    "is_default_org": {
+      "type": "boolean",
+      "required": true
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "account_created_date": {
+      "type": "date",
+      "required": true
+    },
+    "time_zone": {
+      "type": "string",
+      "required": true
+    },
+    "language_code": {
+      "type": "string",
+      "required": true
+    },
+    "date_format": {
+      "type": "string",
+      "required": true
+    },
+    "field_separator": {
+      "type": "string",
+      "required": true
+    },
+    "fiscal_year_start_month": {
+      "type": "integer",
+      "required": true
+    },
+    "tax_group_enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "user_status": {
+      "type": "string"
+    },
+    "contact_name": {
+      "type": "string",
+      "required": true
+    },
+    "industry_type": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
