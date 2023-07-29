@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupons",
+  "info": {
+    "singularName": "coupon",
+    "pluralName": "coupons",
+    "displayName": "Coupon"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "is_enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "coupon_code": {
+      "type": "string",
+      "required": true
+    },
+    "discount": {
+      "type": "string",
+      "required": true
+    },
+    "discount_type": {
+      "type": "enumeration",
+      "enum": [
+        "flat",
+        "percentage"
+      ],
+      "required": true
+    }
+  }
+}

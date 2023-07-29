@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_gateways",
+  "info": {
+    "singularName": "payment-gateway",
+    "pluralName": "payment-gateways",
+    "displayName": "Payment-gateway"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "configured": {
+      "type": "boolean",
+      "required": true
+    },
+    "additional_field": {
+      "type": "string",
+      "required": true
+    },
+    "custom_fields": {
+      "type": "json",
+      "required": false
+    },
+    "gateway_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

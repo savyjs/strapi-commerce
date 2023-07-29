@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "orders",
+  "collectionName": "packages",
   "info": {
-    "singularName": "order",
-    "pluralName": "orders",
-    "displayName": "order",
-    "description": ""
+    "singularName": "package",
+    "pluralName": "packages",
+    "displayName": "package"
   },
   "options": {
     "draftAndPublish": true
@@ -16,22 +15,35 @@
     }
   },
   "attributes": {
+    "package_id": {
+      "type": "integer",
+      "required": true
+    },
+    "package_number": {
+      "type": "string",
+      "required": true
+    },
     "salesorder_id": {
-      "type": "biginteger"
+      "type": "integer",
+      "required": true
     },
     "salesorder_number": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "status": {
       "type": "enumeration",
       "enum": [
         "fulfilled",
-        "processing",
-        "cancelled"
-      ]
+        "pending",
+        "cancelled",
+        "shipped"
+      ],
+      "required": true
     },
     "shipment_date": {
       "type": "date"
@@ -40,80 +52,99 @@
       "type": "string"
     },
     "customer_id": {
-      "type": "biginteger"
+      "type": "integer",
+      "required": true
     },
     "customer_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "contact_persons": {
       "type": "json"
     },
     "currency_id": {
-      "type": "biginteger"
+      "type": "integer",
+      "required": true
     },
     "currency_code": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "currency_symbol": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "exchange_rate": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "discount_amount": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "discount": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "is_discount_before_tax": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     "discount_type": {
       "type": "enumeration",
       "enum": [
         "entity_level",
-        "item_level"
-      ]
+        "item_level",
+        "order_level"
+      ],
+      "required": true
     },
     "estimate_id": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "delivery_method": {
       "type": "string"
     },
     "delivery_method_id": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "line_items": {
-      "type": "json"
+      "type": "json",
+      "required": true
     },
     "shipping_charge": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "adjustment": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "adjustment_description": {
       "type": "string"
     },
     "sub_total": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "tax_total": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "total": {
-      "type": "decimal"
+      "type": "float",
+      "required": true
     },
     "taxes": {
-      "type": "json"
+      "type": "json",
+      "required": true
     },
     "price_precision": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "pricebook_id": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "shipping_address": {
       "type": "json"
@@ -122,13 +153,13 @@
       "type": "json"
     },
     "notes": {
-      "type": "string"
+      "type": "text"
     },
     "terms": {
-      "type": "string"
+      "type": "text"
     },
     "template_id": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "template_name": {
       "type": "string"
@@ -137,13 +168,13 @@
       "type": "string"
     },
     "created_time": {
-      "type": "datetime"
+      "type": "date"
     },
     "last_modified_time": {
-      "type": "datetime"
+      "type": "date"
     },
     "salesperson_id": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "salesperson_name": {
       "type": "string"
@@ -162,11 +193,6 @@
     },
     "place_of_supply": {
       "type": "string"
-    },
-    "contacts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::contact-person.contact-person"
     }
   }
 }

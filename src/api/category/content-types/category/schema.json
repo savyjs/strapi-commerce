@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "tax_id": {
+      "type": "integer",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "visibility": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "sort_by_options": {
+      "type": "json",
+      "default": []
+    },
+    "bread_crumbs": {
+      "type": "json",
+      "default": []
+    },
+    "specifications": {
+      "type": "json",
+      "default": []
+    },
+    "parent_id": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "json",
+      "default": []
+    },
+    "number_columns": {
+      "type": "integer",
+      "required": true,
+      "default": 2
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

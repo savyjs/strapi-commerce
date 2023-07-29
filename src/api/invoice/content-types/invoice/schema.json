@@ -1,0 +1,142 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "locales": false
+  },
+  "attributes": {
+    "customer_id": {
+      "type": "integer"
+    },
+    "contact_persons": {
+      "type": "json"
+    },
+    "invoice_number": {
+      "type": "string",
+      "required": true
+    },
+    "reference_number": {
+      "type": "string"
+    },
+    "template_id": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "date"
+    },
+    "payment_terms": {
+      "type": "integer"
+    },
+    "payment_terms_label": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "discount": {
+      "type": "float"
+    },
+    "is_discount_before_tax": {
+      "type": "boolean"
+    },
+    "discount_type": {
+      "type": "string"
+    },
+    "is_inclusive_tax": {
+      "type": "boolean"
+    },
+    "exchange_rate": {
+      "type": "float"
+    },
+    "recurring_invoice_id": {
+      "type": "string"
+    },
+    "invoiced_estimate_id": {
+      "type": "string"
+    },
+    "salesperson_name": {
+      "type": "string"
+    },
+    "custom_fields": {
+      "type": "json"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "line_items": {
+      "type": "json"
+    },
+    "payment_options": {
+      "type": "json"
+    },
+    "allow_partial_payments": {
+      "type": "boolean"
+    },
+    "custom_body": {
+      "type": "text"
+    },
+    "custom_subject": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "terms": {
+      "type": "text"
+    },
+    "shipping_charge": {
+      "type": "float"
+    },
+    "adjustment": {
+      "type": "float"
+    },
+    "adjustment_description": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "tax_authority_id": {
+      "type": "integer"
+    },
+    "tax_exemption_id": {
+      "type": "integer"
+    },
+    "avatax_use_code": {
+      "type": "string"
+    },
+    "avatax_exempt_no": {
+      "type": "string"
+    },
+    "vat_treatment": {
+      "type": "string"
+    },
+    "tax_treatment": {
+      "type": "string"
+    },
+    "billing_address_id": {
+      "type": "integer"
+    },
+    "shipping_address_id": {
+      "type": "integer"
+    },
+    "gst_no": {
+      "type": "string"
+    },
+    "gst_treatment": {
+      "type": "string"
+    },
+    "place_of_supply": {
+      "type": "string"
+    },
+    "cfdi_usage": {
+      "type": "string"
+    }
+  }
+}

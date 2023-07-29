@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lineitems",
+  "info": {
+    "singularName": "lineitem",
+    "pluralName": "lineitems",
+    "displayName": "lineitem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "item_id": {
+      "type": "integer",
+      "required": true
+    },
+    "line_item_id": {
+      "type": "integer",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "item_order": {
+      "type": "integer"
+    },
+    "bcy_rate": {
+      "type": "float",
+      "required": true
+    },
+    "rate": {
+      "type": "float",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "quantity_invoiced": {
+      "type": "integer",
+      "required": true
+    },
+    "quantity_packed": {
+      "type": "integer",
+      "required": true
+    },
+    "quantity_shipped": {
+      "type": "integer",
+      "required": true
+    },
+    "unit": {
+      "type": "string",
+      "required": true
+    },
+    "tax_id": {
+      "type": "integer",
+      "required": true
+    },
+    "tds_tax_id": {
+      "type": "string"
+    },
+    "tax_name": {
+      "type": "string",
+      "required": true
+    },
+    "tax_type": {
+      "type": "string",
+      "required": true
+    },
+    "tax_percentage": {
+      "type": "float",
+      "required": true
+    },
+    "item_total": {
+      "type": "float",
+      "required": true
+    },
+    "is_invoiced": {
+      "type": "boolean",
+      "required": true
+    },
+    "image_id": {
+      "type": "integer"
+    },
+    "image_name": {
+      "type": "string"
+    },
+    "image_type": {
+      "type": "string"
+    },
+    "warehouse_id": {
+      "type": "integer",
+      "required": true
+    },
+    "hsn_or_sac": {
+      "type": "integer",
+      "required": true
+    },
+    "sat_item_key_code": {
+      "type": "integer",
+      "required": true
+    },
+    "unitkey_code": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

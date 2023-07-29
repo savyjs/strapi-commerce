@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "currencies",
+  "info": {
+    "singularName": "currency",
+    "pluralName": "currencies",
+    "displayName": "Currency"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "currency_id": {
+      "type": "string",
+      "required": true
+    },
+    "currency_code": {
+      "type": "string",
+      "required": true
+    },
+    "currency_name": {
+      "type": "string",
+      "required": true
+    },
+    "currency_symbol": {
+      "type": "string",
+      "required": true
+    },
+    "price_precision": {
+      "type": "integer",
+      "required": true
+    },
+    "currency_format": {
+      "type": "string",
+      "required": true
+    },
+    "is_base_currency": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}
