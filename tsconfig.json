@@ -3,7 +3,10 @@
   "allowImportingTsExtensions": true,
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "lib": [
+      "dom"
+    ]
   },
   "include": [
     "./",

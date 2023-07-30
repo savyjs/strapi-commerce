@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "zoho_auths",
+  "info": {
+    "singularName": "zoho-auth",
+    "pluralName": "zoho-auths",
+    "displayName": "zoho auth",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "error": {
+      "type": "text"
+    },
+    "expires_in": {
+      "type": "biginteger"
+    },
+    "refresh_token": {
+      "type": "text"
+    },
+    "access_token": {
+      "type": "text"
+    }
+  }
+}
