@@ -1,6 +1,8 @@
 ############################
 # OS X
 ############################
+yarn.lock
+package-lock.json
 
 .DS_Store
 .AppleDouble
