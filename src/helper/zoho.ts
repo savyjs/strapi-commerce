@@ -24,6 +24,16 @@ export default class Zoho {
     this.client_id = env('ZOHO_CLIENT_ID')
     this.client_secret = env('ZOHO_CLIENT_SECRET')
     if (!this.client_id || !this.account_url || !this.client_secret) throw new Error("ZOHO_ACCOUNT_API, ZOHO_CLIENT_SECRET or ZOHO_CLIENT_ID not found!")
+
+
+    axios.interceptors.response.use(resp => resp, async error => {
+      if (error.response.status === 401) {
+        await this.refreshAccessToken()
+      }
+      // Return the original error if we can't handle it
+      return Promise.reject(error);
+    });
+
   }
 
   async generateAccessToken(code ?: string) {
@@ -123,13 +133,16 @@ export default class Zoho {
     }
 
     if (type == "inventory") {
-      recordObject.url = this.inventory_url + url
+      recordObject.url = url.slice(0, 4) == 'http' ? url : this.inventory_url + url
     } else if (type == "commerce") {
-      recordObject.url = this.commerce_api_url + url
-      headers['X-com-zoho-store-organizationid'] = this.organizationid
-      // headers['X-ZOHO-Include-Formatted'] = true
+      recordObject.url = url.slice(0, 4) == 'http' ? url : this.commerce_api_url + url
+      if (recordObject.url.slice(0, 38) == 'https://commerce.zoho.com/store/api/v1') {
+        headers['X-com-zoho-store-organizationid'] = this.organizationid
+        // headers['X-ZOHO-Include-Formatted'] = true
+      }
       // headers['domain-name'] = this.commerce_domain
     }
+
     let config = {
       method: method,
       headers,
