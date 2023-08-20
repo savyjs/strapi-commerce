@@ -4,19 +4,13 @@
   "info": {
     "singularName": "invoice",
     "pluralName": "invoices",
-    "displayName": "Invoice"
+    "displayName": "Invoice",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": false,
-    "locales": false
+    "draftAndPublish": false
   },
   "attributes": {
-    "customer_id": {
-      "type": "integer"
-    },
-    "contact_persons": {
-      "type": "json"
-    },
     "invoice_number": {
       "type": "string",
       "required": true
@@ -55,12 +49,6 @@
       "type": "float"
     },
     "recurring_invoice_id": {
-      "type": "string"
-    },
-    "invoiced_estimate_id": {
-      "type": "string"
-    },
-    "salesperson_name": {
       "type": "string"
     },
     "custom_fields": {
@@ -102,41 +90,31 @@
     "reason": {
       "type": "string"
     },
-    "tax_authority_id": {
-      "type": "integer"
-    },
-    "tax_exemption_id": {
-      "type": "integer"
-    },
-    "avatax_use_code": {
-      "type": "string"
-    },
-    "avatax_exempt_no": {
-      "type": "string"
-    },
-    "vat_treatment": {
-      "type": "string"
-    },
     "tax_treatment": {
-      "type": "string"
-    },
-    "billing_address_id": {
-      "type": "integer"
-    },
-    "shipping_address_id": {
-      "type": "integer"
-    },
-    "gst_no": {
-      "type": "string"
-    },
-    "gst_treatment": {
       "type": "string"
     },
     "place_of_supply": {
       "type": "string"
     },
-    "cfdi_usage": {
-      "type": "string"
+    "billing_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::address.address"
+    },
+    "shipping_address": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::address.address"
+    },
+    "estimate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoice.invoice"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

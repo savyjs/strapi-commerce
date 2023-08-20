@@ -50,12 +50,9 @@ export interface Contact {
     tax_authority_name?: string;
     tax_exemption_code?: string;
     place_of_contact?: string;
-    gst_no?: string;
-    vat_treatment?: string;
     tax_treatment?: string;
     tax_regime?: string;
-    is_tds_registered?: boolean;
-    gst_treatment?: string;
+    active?: boolean;
     locale: string;
     localizations?: { data: Contact[] };
   };
@@ -94,12 +91,9 @@ export interface Contact_Plain {
   tax_authority_name?: string;
   tax_exemption_code?: string;
   place_of_contact?: string;
-  gst_no?: string;
-  vat_treatment?: string;
   tax_treatment?: string;
   tax_regime?: string;
-  is_tds_registered?: boolean;
-  gst_treatment?: string;
+  active?: boolean;
   locale: string;
   localizations?: Contact[];
 }
@@ -138,12 +132,9 @@ export interface Contact_NoRelations {
   tax_authority_name?: string;
   tax_exemption_code?: string;
   place_of_contact?: string;
-  gst_no?: string;
-  vat_treatment?: string;
   tax_treatment?: string;
   tax_regime?: string;
-  is_tds_registered?: boolean;
-  gst_treatment?: string;
+  active?: boolean;
   locale: string;
   localizations?: Contact[];
 }
@@ -182,12 +173,9 @@ export interface Contact_AdminPanelLifeCycle {
   tax_authority_name?: string;
   tax_exemption_code?: string;
   place_of_contact?: string;
-  gst_no?: string;
-  vat_treatment?: string;
   tax_treatment?: string;
   tax_regime?: string;
-  is_tds_registered?: boolean;
-  gst_treatment?: string;
+  active?: boolean;
   locale: string;
   localizations?: Contact[];
 }

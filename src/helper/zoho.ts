@@ -4,6 +4,7 @@ import axios from "axios";
 import env from "@strapi/utils/dist/env-helper";
 import {Error} from "memfs/lib/internal/errors";
 import {CallApiHistory_Plain} from "../api/call-api-history/content-types/call-api-history/call-api-history";
+import {retry} from "rxjs/operators";
 
 export default class Zoho {
   public account_url: string
@@ -117,7 +118,7 @@ export default class Zoho {
     } else {
       throw new Error("zoho access_token not found!")
     }
-
+    return this
   }
 
   async callZohoAPI(type: "commerce" | "inventory", method: "POST" | "GET" | "DELETE" | "PUT", url: string, data, headers: {}) {
@@ -153,7 +154,6 @@ export default class Zoho {
     let response = await axios.request(config);
     recordObject.response_body = JSON.stringify(response.data)
     recordObject.status = response.status
-    console.log({config})
     // await strapi.service("api::call-api-history.call-api-history").create(recordObject)
     return response;
   }
