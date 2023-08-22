@@ -158,6 +158,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::warehouse.warehouse"
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vendor.vendor",
+      "mappedBy": "organization"
     }
   }
 }

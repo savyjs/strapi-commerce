@@ -5,10 +5,12 @@ import { Media } from '../../../../common/schemas-to-ts/Media';
 import { Branch } from '../../../branch/content-types/branch/branch';
 import { Currency } from '../../../currency/content-types/currency/currency';
 import { Warehouse } from '../../../warehouse/content-types/warehouse/warehouse';
+import { Vendor } from '../../../vendor/content-types/vendor/vendor';
 import { User_Plain } from '../../../../common/schemas-to-ts/User';
 import { Branch_Plain } from '../../../branch/content-types/branch/branch';
 import { Currency_Plain } from '../../../currency/content-types/currency/currency';
 import { Warehouse_Plain } from '../../../warehouse/content-types/warehouse/warehouse';
+import { Vendor_Plain } from '../../../vendor/content-types/vendor/vendor';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export enum Stage {
@@ -41,6 +43,7 @@ export interface Organization {
     branches: { data: Branch[] };
     currencies: { data: Currency[] };
     warehouses: { data: Warehouse[] };
+    vendors: { data: Vendor[] };
     locale: string;
     localizations?: { data: Organization[] };
   };
@@ -69,6 +72,7 @@ export interface Organization_Plain {
   branches: Branch_Plain[];
   currencies: Currency_Plain[];
   warehouses: Warehouse_Plain[];
+  vendors: Vendor_Plain[];
   locale: string;
   localizations?: Organization[];
 }
@@ -97,6 +101,7 @@ export interface Organization_NoRelations {
   branches: number[];
   currencies: number[];
   warehouses: number[];
+  vendors: number[];
   locale: string;
   localizations?: Organization[];
 }
@@ -125,6 +130,7 @@ export interface Organization_AdminPanelLifeCycle {
   branches: AdminPanelRelationPropertyModification<Branch_Plain>[];
   currencies: AdminPanelRelationPropertyModification<Currency_Plain>[];
   warehouses: AdminPanelRelationPropertyModification<Warehouse_Plain>[];
+  vendors: AdminPanelRelationPropertyModification<Vendor_Plain>[];
   locale: string;
   localizations?: Organization[];
 }
