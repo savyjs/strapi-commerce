@@ -4,9 +4,11 @@ import { User } from '../../../../common/schemas-to-ts/User';
 import { Organization } from '../../../organization/content-types/organization/organization';
 import { Media } from '../../../../common/schemas-to-ts/Media';
 import { Address } from '../../../address/content-types/address/address';
+import { PaymentMethod } from '../../../payment-method/content-types/payment-method/payment-method';
 import { User_Plain } from '../../../../common/schemas-to-ts/User';
 import { Organization_Plain } from '../../../organization/content-types/organization/organization';
 import { Address_Plain } from '../../../address/content-types/address/address';
+import { PaymentMethod_Plain } from '../../../payment-method/content-types/payment-method/payment-method';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Store {
@@ -20,6 +22,7 @@ export interface Store {
     active?: boolean;
     is_open: boolean;
     address?: { data: Address };
+    payment_methods: { data: PaymentMethod[] };
     locale: string;
     localizations?: { data: Store[] };
   };
@@ -34,6 +37,7 @@ export interface Store_Plain {
   active?: boolean;
   is_open: boolean;
   address?: Address_Plain;
+  payment_methods: PaymentMethod_Plain[];
   locale: string;
   localizations?: Store[];
 }
@@ -48,6 +52,7 @@ export interface Store_NoRelations {
   active?: boolean;
   is_open: boolean;
   address?: number;
+  payment_methods: number[];
   locale: string;
   localizations?: Store[];
 }
@@ -62,6 +67,7 @@ export interface Store_AdminPanelLifeCycle {
   active?: boolean;
   is_open: boolean;
   address?: AdminPanelRelationPropertyModification<Address_Plain>;
+  payment_methods: AdminPanelRelationPropertyModification<PaymentMethod_Plain>[];
   locale: string;
   localizations?: Store[];
 }

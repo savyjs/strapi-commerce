@@ -79,6 +79,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::address.address"
+    },
+    "payment_methods": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment-method.payment-method",
+      "mappedBy": "store"
     }
   }
 }
