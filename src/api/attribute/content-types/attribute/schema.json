@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attributes",
+  "info": {
+    "singularName": "attribute",
+    "pluralName": "attributes",
+    "displayName": "Attribute",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "string"
+    },
+    "is_required": {
+      "type": "boolean"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "is_unique": {
+      "type": "boolean"
+    },
+    "is_filterable": {
+      "type": "boolean"
+    },
+    "is_visible": {
+      "type": "boolean"
+    }
+  }
+}
