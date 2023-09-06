@@ -220,7 +220,7 @@ export interface Order_AdminPanelLifeCycle {
   gst_no?: string;
   gst_treatment?: string;
   place_of_supply?: string;
-  contacts: AdminPanelRelationPropertyModification<ContactPerson_Plain>;
+  contacts: AdminPanelRelationPropertyModification<ContactPerson_Plain>[];
   locale: string;
   localizations?: Order[];
 }

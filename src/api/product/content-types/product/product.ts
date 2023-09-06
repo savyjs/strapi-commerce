@@ -50,11 +50,11 @@ export interface Product_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title: string;
   type: string;
-  parents: AdminPanelRelationPropertyModification<Product_Plain>;
+  parents: AdminPanelRelationPropertyModification<Product_Plain>[];
   sku?: string;
   active?: boolean;
   attribute_family?: AdminPanelRelationPropertyModification<AttributeFamily_Plain>;
-  stores: AdminPanelRelationPropertyModification<Store_Plain>;
+  stores: AdminPanelRelationPropertyModification<Store_Plain>[];
   locale: string;
   localizations?: Product[];
 }

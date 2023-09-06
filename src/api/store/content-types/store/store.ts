@@ -67,7 +67,7 @@ export interface Store_AdminPanelLifeCycle {
   active?: boolean;
   is_open: boolean;
   address?: AdminPanelRelationPropertyModification<Address_Plain>;
-  payment_methods: AdminPanelRelationPropertyModification<PaymentMethod_Plain>;
+  payment_methods: AdminPanelRelationPropertyModification<PaymentMethod_Plain>[];
   locale: string;
   localizations?: Store[];
 }

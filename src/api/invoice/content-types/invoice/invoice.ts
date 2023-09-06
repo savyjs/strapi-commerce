@@ -146,7 +146,7 @@ export interface Invoice_AdminPanelLifeCycle {
   tax_treatment?: string;
   place_of_supply?: string;
   billing_address?: AdminPanelRelationPropertyModification<Address_Plain>;
-  shipping_address: AdminPanelRelationPropertyModification<Address_Plain>;
+  shipping_address: AdminPanelRelationPropertyModification<Address_Plain>[];
   estimate?: AdminPanelRelationPropertyModification<Invoice_Plain>;
   user?: AdminPanelRelationPropertyModification<User_Plain>;
 }
