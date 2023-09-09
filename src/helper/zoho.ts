@@ -50,11 +50,12 @@ export default class Zoho {
     body.append('grant_type', 'authorization_code');
 
     let config = {
-      method: 'post',
+      method: "post",
       url: this.account_url,
       data: body
     };
 
+    // @ts-ignore
     let data = await axios.request(config)
       .then((response) => {
         return response.data
@@ -87,6 +88,7 @@ export default class Zoho {
       data: body
     };
 
+    // @ts-ignore
     let data = await axios.request(config)
       .then((response) => {
         return response.data

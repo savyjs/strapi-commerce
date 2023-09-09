@@ -1,5 +1,5 @@
-import myController from './my-controller';
+import OrderRulesController from './order-rules-controller';
 
 export default {
-  myController,
+  OrderRulesController,
 };

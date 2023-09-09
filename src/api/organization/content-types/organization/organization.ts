@@ -124,13 +124,13 @@ export interface Organization_AdminPanelLifeCycle {
   owner?: AdminPanelRelationPropertyModification<User_Plain>;
   images?: AdminPanelRelationPropertyModification<Media>[];
   logo?: AdminPanelRelationPropertyModification<Media>;
-  members?: AdminPanelRelationPropertyModification<User_Plain>[];
+  members?: AdminPanelRelationPropertyModification<User_Plain>;
   active?: boolean;
   has_branch?: boolean;
-  branches: AdminPanelRelationPropertyModification<Branch_Plain>[];
-  currencies: AdminPanelRelationPropertyModification<Currency_Plain>[];
-  warehouses: AdminPanelRelationPropertyModification<Warehouse_Plain>[];
-  vendors: AdminPanelRelationPropertyModification<Vendor_Plain>[];
+  branches: AdminPanelRelationPropertyModification<Branch_Plain>;
+  currencies: AdminPanelRelationPropertyModification<Currency_Plain>;
+  warehouses: AdminPanelRelationPropertyModification<Warehouse_Plain>;
+  vendors: AdminPanelRelationPropertyModification<Vendor_Plain>;
   locale: string;
   localizations?: Organization[];
 }

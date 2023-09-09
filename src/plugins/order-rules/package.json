@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "order-rules",
-    "description": "Description of order-rules plugin",
+    "name": "Order Rules",
+    "description": "Add logics to process orders",
     "kind": "plugin"
   },
   "dependencies": {

@@ -1,10 +1,10 @@
 {
-  "name": "multi-commerce-policy",
+  "name": "multi-commerce",
   "version": "0.0.0",
   "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "multi-commerce-policy",
-    "description": "Description of multi-commerce-policy plugin",
+    "name": "Multi-Commerce",
+    "description": "Adding policies and structures to support multi organization and multi store commerce.",
     "kind": "plugin"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     }
   ],
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=16.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "scripts": {

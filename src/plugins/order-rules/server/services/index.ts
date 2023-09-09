@@ -1,5 +1,5 @@
-import myService from './my-service';
+import OrderRulesService from './order-rules-service';
 
 export default {
-  myService,
+  OrderRulesService,
 };
