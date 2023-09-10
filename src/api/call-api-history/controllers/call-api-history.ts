@@ -16,7 +16,7 @@ export default factories.createCoreController('api::call-api-history.call-api-hi
         let responseObject = await zoho.callZohoAPI(type, method, url, data, headers);
         ctx.body = responseObject?.data
       } else {
-        ctx.body = "request invalid. json should have fields of method, url and data"
+        ctx.body = "request invalid. fields `method`, `url` and `data` are missing."
       }
     } catch (err) {
       ctx.body = err
