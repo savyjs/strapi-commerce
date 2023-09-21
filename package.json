@@ -16,7 +16,7 @@
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {
-    "pq": "^0.0.3",
+    "pg": "^8.11.3",
     "concurrently": "^8.2.1"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "uuid": "a99980be-eda3-4864-a531-e1596b2a2e22"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
