@@ -6,8 +6,17 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "build": "yarn build-plugins && strapi build",
+    "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order-rules -w\" \"yarn:build-plugins-invoice -w\"",
+    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-order-rules && yarn build-plugins-invoice",
+    "build-plugins-multi-commerce": "cd src/plugins/multi-commerce && yarn build",
+    "build-plugins-order-rules": "cd src/plugins/order-rules && yarn build",
+    "build-plugins-invoice": "cd src/plugins/invoice && yarn build",
+    "generate-types": "strapi ts:generate-types"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
   },
   "dependencies": {
     "@strapi-community/strapi-plugin-url-alias": "^1.0.0-alpha.8",

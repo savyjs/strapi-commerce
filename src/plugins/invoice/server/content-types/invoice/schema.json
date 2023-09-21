@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "invoice"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "comment": ""
+  },
+  "attributes": {
+    "user_id": {
+      "type": "integer"
+    },
+    "store_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "name": "strapi-payment-gateway",
+  "name": "invoice",
   "version": "0.0.0",
-  "description": "Online Payment Gateway Plugin.",
+  "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "Payment Gateway",
-    "description": "Online Payment Gateway Plugin",
+    "name": "invoice",
+    "description": "Description of invoice plugin",
     "kind": "plugin"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     }
   ],
   "engines": {
-    "node": ">=16.0.0 <=20.x.x",
+    "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
   "scripts": {
