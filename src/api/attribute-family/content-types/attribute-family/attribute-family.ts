@@ -60,7 +60,7 @@ export interface AttributeFamily_AdminPanelLifeCycle {
   image?: AdminPanelRelationPropertyModification<Media>;
   store?: AdminPanelRelationPropertyModification<Store_Plain>;
   user?: AdminPanelRelationPropertyModification<User_Plain>;
-  attribute_groups?: AdminPanelRelationPropertyModification<AttributeGroup_Plain>;
+  attribute_groups?: AdminPanelRelationPropertyModification<AttributeGroup_Plain>[];
   code?: string;
   locale: string;
   localizations?: AttributeFamily[];

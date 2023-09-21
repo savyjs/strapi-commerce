@@ -16,6 +16,7 @@
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {
+    "pq": "^0.0.3",
     "concurrently": "^8.2.1"
   },
   "dependencies": {
