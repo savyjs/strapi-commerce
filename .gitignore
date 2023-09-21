@@ -33,7 +33,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lockb
-
+*.lock
 
 ############################
 # Packages
