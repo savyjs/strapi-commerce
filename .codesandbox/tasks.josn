@@ -1,0 +1,23 @@
+{
+  "$schema": "https://codesandbox.io/schemas/tasks.json",
+  "setupTasks": [
+    {
+      "name": "Installing Dependencies",
+      "command": "yarn install"
+    }
+  ],
+  "tasks": {
+    "dev": {
+      "name": "Application",
+      "command": "yarn develop",
+      "runAtStart": true,
+      "restartOn": {
+        "files": ["yarn.yaml"]
+      },
+      "preview": {
+        "port": 1338,
+        "pr-link": "direct"
+      }
+    }
+  }
+}
