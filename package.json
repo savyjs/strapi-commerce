@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "strapi-multi-commerce-core": "file:src/plugins/multi-commerce",
     "@strapi-community/strapi-plugin-url-alias": "^1.0.0-alpha.8",
     "@strapi/plugin-documentation": "4.14.0-alpha.0",
     "@strapi/plugin-i18n": "4.14.0-alpha.0",
@@ -21,8 +22,7 @@
     "strapi-plugin-comments": "^2.2.12",
     "strapi-plugin-duplicate-button": "^1.1.12",
     "strapi-plugin-schemas-to-ts": "^1.1.9",
-    "strapi-plugin-timezone-select": "^1.0.0",
-    "strapi-plugin-vercel-deploy": "^1.4.0"
+    "strapi-plugin-timezone-select": "^1.0.0"
   },
   "author": {
     "name": "E-cmmerce core"

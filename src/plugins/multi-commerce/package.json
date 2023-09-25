@@ -1,9 +1,9 @@
 {
-  "name": "multi-commerce",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "name": "strapi-multi-commerce-core",
+  "version": "1.0.0-development.1",
+  "description": "A core plugin to run multiple commerces on Strapi.",
   "strapi": {
-    "name": "Multi-Commerce",
+    "name": "Multi Commerce Core",
     "description": "Adding policies and structures to support multi organization and multi store commerce.",
     "kind": "plugin"
   },
@@ -11,7 +11,8 @@
     "@strapi/design-system": "^1.6.3",
     "@strapi/helper-plugin": "^4.6.0",
     "@strapi/icons": "^1.6.3",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "validate": "^5.2.0"
   },
   "devDependencies": {
     "@strapi/typescript-utils": "^4.6.0",
