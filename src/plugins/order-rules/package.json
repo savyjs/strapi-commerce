@@ -1,13 +1,14 @@
 {
-  "name": "order-rules",
-  "version": "0.0.0",
+  "name": "strapi-plugin-commerce-order-rules",
+  "version": "1.0.0-development.1",
   "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "Order Rules",
+    "name": "order-rules",
     "description": "Add logics to process orders",
     "kind": "plugin"
   },
   "dependencies": {
+    "strapi-plugin-multi-commerce-core": "latest",
     "@strapi/design-system": "^1.6.3",
     "@strapi/helper-plugin": "^4.6.0",
     "@strapi/icons": "^1.6.3",
@@ -32,11 +33,11 @@
     "styled-components": "^5.3.6"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "savyjs"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer"
+      "name": "savyjs"
     }
   ],
   "engines": {
@@ -44,6 +45,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
+    "sync": "yarn link",
     "develop": "tsc -p tsconfig.server.json -w",
     "build": "tsc -p tsconfig.server.json"
   },

@@ -1,9 +1,9 @@
 {
-  "name": "strapi-multi-commerce-core",
-  "version": "1.0.0-development.1",
+  "name": "strapi-plugin-multi-commerce-core",
+  "version": "1.0.0-development.2",
   "description": "A core plugin to run multiple commerces on Strapi.",
   "strapi": {
-    "name": "Multi Commerce Core",
+    "name": "multi-commerce-core",
     "description": "Adding policies and structures to support multi organization and multi store commerce.",
     "kind": "plugin"
   },
@@ -45,6 +45,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
+    "sync": "yarn link",
     "develop": "tsc -p tsconfig.server.json -w",
     "build": "tsc -p tsconfig.server.json"
   },
