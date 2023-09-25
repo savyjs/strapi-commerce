@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "invoices",
+  "collectionName": "invoice",
   "info": {
     "singularName": "invoice",
     "pluralName": "invoices",
-    "displayName": "invoice"
+    "displayName": "Invoice"
   },
   "options": {
     "draftAndPublish": true,
