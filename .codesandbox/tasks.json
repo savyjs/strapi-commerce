@@ -7,16 +7,17 @@
     }
   ],
   "tasks": {
-    "dev": {
-      "name": "Application",
+    "develop": {
+      "name": "develop",
       "command": "yarn develop",
+      "runAtStart": false
+    },
+    "start": {
+      "name": "start",
+      "command": "yarn start",
       "runAtStart": true,
-      "restartOn": {
-        "files": ["yarn.yaml"]
-      },
       "preview": {
-        "port": 1339,
-        "pr-link": "direct"
+        "port": 1337
       }
     }
   }
