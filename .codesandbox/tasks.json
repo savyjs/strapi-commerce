@@ -4,6 +4,14 @@
     {
       "name": "Installing Dependencies",
       "command": "yarn install"
+    },
+    {
+      "name": "Build Project",
+      "command": "yarn build"
+    },
+    {
+      "name": "Remove Old Dist",
+      "command": "rm -rf dist || true"
     }
   ],
   "tasks": {
