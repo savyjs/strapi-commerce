@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-commerce-invoice",
-  "version": "1.0.0-development.2",
+  "version": "1.0.0-development.3",
   "description": "This is plugin for invoice management.",
   "strapi": {
     "name": "invoices",
@@ -45,6 +45,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
+    "publish": "yarn publish",
     "sync": "yarn link",
     "develop": "tsc -p tsconfig.server.json -w",
     "build": "tsc -p tsconfig.server.json"
