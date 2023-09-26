@@ -2,16 +2,20 @@
   "$schema": "https://codesandbox.io/schemas/tasks.json",
   "setupTasks": [
     {
-      "name": "Installing Dependencies",
+      "name": "Install Dependencies",
       "command": "yarn install"
+    },
+    {
+      "name": "Remove Old Dist",
+      "command": "rm -rf dist || true"
     },
     {
       "name": "Build Project",
       "command": "yarn build"
     },
     {
-      "name": "Remove Old Dist",
-      "command": "rm -rf dist || true"
+      "name": "Generate Types",
+      "command": "yarn generate-types"
     }
   ],
   "tasks": {
