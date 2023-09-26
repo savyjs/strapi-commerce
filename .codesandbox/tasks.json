@@ -15,7 +15,7 @@
         "files": ["yarn.yaml"]
       },
       "preview": {
-        "port": 1338,
+        "port": 1339,
         "pr-link": "direct"
       }
     }
