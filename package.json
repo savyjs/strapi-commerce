@@ -16,12 +16,12 @@
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {
+    "strapi-plugin-multi-commerce-core": "file:src/plugins/multi-commerce",
     "pg": "^8.11.3",
     "concurrently": "^8.2.1",
     "@types/jest": "^29.5.5"
   },
   "dependencies": {
-    "strapi-plugin-multi-commerce-core": "file:src/plugins/multi-commerce",
     "@strapi-community/strapi-plugin-url-alias": "^1.0.0-alpha.8",
     "@strapi/plugin-documentation": "4.14.0-alpha.0",
     "@strapi/plugin-i18n": "4.14.0-alpha.0",
