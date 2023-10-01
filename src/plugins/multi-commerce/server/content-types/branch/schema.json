@@ -66,7 +66,7 @@
     "country": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::country.country"
+      "target": "plugin::zone.country"
     },
     "logo": {
       "type": "media",
@@ -87,7 +87,7 @@
     "address": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::address.address"
+      "target": "plugin::contact.address"
     },
     "owner": {
       "type": "relation",

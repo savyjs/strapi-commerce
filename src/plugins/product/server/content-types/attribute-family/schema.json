@@ -59,7 +59,7 @@
     "store": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::store.store"
+      "target": "plugin::multi-commerce.store"
     },
     "user": {
       "type": "relation",
@@ -69,7 +69,7 @@
     "attribute_groups": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::attribute-group.attribute-group",
+      "target": "plugin::product.attribute-group",
       "mappedBy": "attribute_families"
     },
     "code": {

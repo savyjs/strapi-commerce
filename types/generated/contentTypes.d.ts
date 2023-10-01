@@ -482,6 +482,209 @@ export interface PluginUploadFolder extends Schema.CollectionType {
   };
 }
 
+export interface PluginContactAddress extends Schema.CollectionType {
+  collectionName: 'addresses';
+  info: {
+    singularName: 'address';
+    pluralName: 'addresses';
+    displayName: 'Address';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    street_address1: Attribute.String & Attribute.Required;
+    street_address2: Attribute.String & Attribute.Required;
+    city: Attribute.String & Attribute.Required;
+    state: Attribute.String & Attribute.Required;
+    country: Attribute.String & Attribute.Required;
+    zip: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::contact.address',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::contact.address',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::contact.address',
+      'oneToMany',
+      'plugin::contact.address'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contact_id: Attribute.String & Attribute.Required;
+    contact_name: Attribute.String & Attribute.Required;
+    company_name: Attribute.String;
+    has_transaction: Attribute.Boolean;
+    contact_type: Attribute.Enumeration<['customer', 'vendor']>;
+    is_linked_with_zohocrm: Attribute.Boolean;
+    website: Attribute.String;
+    primary_contact_id: Attribute.String;
+    payment_terms: Attribute.Integer;
+    payment_terms_label: Attribute.String;
+    currency_id: Attribute.String;
+    currency_code: Attribute.String;
+    currency_symbol: Attribute.String;
+    language_code: Attribute.Enumeration<
+      ['de', 'en', 'es', 'fr', 'it', 'ja', 'nl', 'pt', 'sv', 'zh']
+    >;
+    outstanding_receivable_amount: Attribute.Integer;
+    outstanding_receivable_amount_bcy: Attribute.Integer;
+    unused_credits_receivable_amount: Attribute.Integer;
+    unused_credits_receivable_amount_bcy: Attribute.Integer;
+    status: Attribute.String;
+    payment_reminder_enabled: Attribute.Boolean;
+    notes: Attribute.String;
+    created_time: Attribute.DateTime;
+    last_modified_time: Attribute.DateTime;
+    is_taxable: Attribute.Boolean;
+    tax_id: Attribute.String;
+    tax_name: Attribute.String;
+    tax_percentage: Attribute.Float;
+    tax_authority_id: Attribute.String;
+    tax_exemption_id: Attribute.String;
+    tax_authority_name: Attribute.String;
+    tax_exemption_code: Attribute.String;
+    place_of_contact: Attribute.String;
+    tax_treatment: Attribute.String;
+    tax_regime: Attribute.String;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::contact.contact',
+      'oneToMany',
+      'plugin::contact.contact'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginContactContactPerson extends Schema.CollectionType {
+  collectionName: 'contact_persons';
+  info: {
+    singularName: 'contact-person';
+    pluralName: 'contact-persons';
+    displayName: 'Contact Person';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contact_id: Attribute.String & Attribute.Required;
+    contact_person_id: Attribute.String & Attribute.Required;
+    salutation: Attribute.String;
+    first_name: Attribute.String;
+    last_name: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    mobile: Attribute.String;
+    is_primary_contact: Attribute.Boolean;
+    skype: Attribute.String;
+    designation: Attribute.String;
+    department: Attribute.String;
+    is_added_in_portal: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::contact.contact-person',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::contact.contact-person',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::contact.contact-person',
+      'oneToMany',
+      'plugin::contact.contact-person'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface PluginInvoiceInvoice extends Schema.CollectionType {
   collectionName: 'invoice';
   info: {
@@ -580,16 +783,6 @@ export interface PluginMultiCommerceStore extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<true>;
-    address: Attribute.Relation<
-      'plugin::multi-commerce.store',
-      'oneToOne',
-      'api::address.address'
-    >;
-    payment_methods: Attribute.Relation<
-      'plugin::multi-commerce.store',
-      'oneToMany',
-      'api::payment-method.payment-method'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -677,7 +870,7 @@ export interface PluginMultiCommerceBranch extends Schema.CollectionType {
     country: Attribute.Relation<
       'plugin::multi-commerce.branch',
       'oneToOne',
-      'api::country.country'
+      'plugin::zone.country'
     >;
     logo: Attribute.Media &
       Attribute.SetPluginOptions<{
@@ -1260,6 +1453,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
+      'plugin::contact.address': PluginContactAddress;
+      'plugin::contact.contact': PluginContactContact;
+      'plugin::contact.contact-person': PluginContactContactPerson;
       'plugin::invoice.invoice': PluginInvoiceInvoice;
       'plugin::multi-commerce.store': PluginMultiCommerceStore;
       'plugin::multi-commerce.branch': PluginMultiCommerceBranch;

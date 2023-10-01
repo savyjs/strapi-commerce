@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "attribute_groups",
+  "collectionName": "vendors",
   "info": {
-    "singularName": "attribute-group",
-    "pluralName": "attribute-groups",
-    "displayName": "Attribute group",
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "Vendor",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "description": {
+    "title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -24,16 +24,13 @@
       },
       "type": "string"
     },
-    "attribute_families": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::product.attribute-family",
-      "inversedBy": "attribute_groups"
-    },
-    "store": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::multi-commerce.store"
+    "full_name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     },
     "active": {
       "pluginOptions": {
@@ -43,26 +40,39 @@
       },
       "type": "boolean"
     },
-    "users_permissions_user": {
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::multi-commerce.organization",
+      "inversedBy": "vendors"
+    },
+    "contact": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::contact.contact"
     },
-    "title": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string"
+      "type": "text"
     },
-    "code": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string"
+      }
     }
   }
 }

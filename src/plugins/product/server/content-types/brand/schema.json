@@ -83,7 +83,7 @@
     "store": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::store.store"
+      "target": "plugin::multi-commerce.store"
     }
   }
 }

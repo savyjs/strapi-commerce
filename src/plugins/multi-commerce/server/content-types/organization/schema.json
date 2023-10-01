@@ -140,23 +140,23 @@
     "branches": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::branch.branch",
+      "target": "plugin::multi-commerce.branch",
       "mappedBy": "organization"
     },
     "currencies": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::currency.currency"
+      "target": "plugin::sale.currency"
     },
     "warehouses": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::warehouse.warehouse"
+      "target": "plugin::inventory.warehouse"
     },
     "vendors": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::vendor.vendor",
+      "target": "plugin::inventory.vendor",
       "mappedBy": "organization"
     }
   }
