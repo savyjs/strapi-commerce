@@ -685,6 +685,149 @@ export interface PluginContactContactPerson extends Schema.CollectionType {
   };
 }
 
+export interface PluginInventoryVendor extends Schema.CollectionType {
+  collectionName: 'vendors';
+  info: {
+    singularName: 'vendor';
+    pluralName: 'vendors';
+    displayName: 'Vendor';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    full_name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    organization: Attribute.Relation<
+      'plugin::inventory.vendor',
+      'manyToOne',
+      'plugin::multi-commerce.organization'
+    >;
+    contact: Attribute.Relation<
+      'plugin::inventory.vendor',
+      'oneToOne',
+      'plugin::contact.contact'
+    >;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logo: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::inventory.vendor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::inventory.vendor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::inventory.vendor',
+      'oneToMany',
+      'plugin::inventory.vendor'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginInventoryWarehouse extends Schema.CollectionType {
+  collectionName: 'warehouses';
+  info: {
+    singularName: 'warehouse';
+    pluralName: 'warehouses';
+    displayName: 'Warehouse';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    warehouse_name: Attribute.String & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    city: Attribute.String & Attribute.Required;
+    state: Attribute.String & Attribute.Required;
+    country: Attribute.String & Attribute.Required;
+    zip: Attribute.Integer & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::inventory.warehouse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::inventory.warehouse',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::inventory.warehouse',
+      'oneToMany',
+      'plugin::inventory.warehouse'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface PluginInvoiceInvoice extends Schema.CollectionType {
   collectionName: 'invoice';
   info: {
@@ -2322,6 +2465,8 @@ declare module '@strapi/strapi' {
       'plugin::contact.address': PluginContactAddress;
       'plugin::contact.contact': PluginContactContact;
       'plugin::contact.contact-person': PluginContactContactPerson;
+      'plugin::inventory.vendor': PluginInventoryVendor;
+      'plugin::inventory.warehouse': PluginInventoryWarehouse;
       'plugin::invoice.invoice': PluginInvoiceInvoice;
       'plugin::multi-commerce.store': PluginMultiCommerceStore;
       'plugin::multi-commerce.branch': PluginMultiCommerceBranch;
