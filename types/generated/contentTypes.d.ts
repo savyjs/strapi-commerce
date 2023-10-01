@@ -881,7 +881,7 @@ export interface PluginMultiCommerceBranch extends Schema.CollectionType {
     address: Attribute.Relation<
       'plugin::multi-commerce.branch',
       'oneToOne',
-      'api::address.address'
+      'plugin::contact.address'
     >;
     owner: Attribute.Relation<
       'plugin::multi-commerce.branch',
@@ -994,22 +994,22 @@ export interface PluginMultiCommerceOrganization extends Schema.CollectionType {
     branches: Attribute.Relation<
       'plugin::multi-commerce.organization',
       'oneToMany',
-      'api::branch.branch'
+      'plugin::multi-commerce.branch'
     >;
     currencies: Attribute.Relation<
       'plugin::multi-commerce.organization',
       'oneToMany',
-      'api::currency.currency'
+      'plugin::sale.currency'
     >;
     warehouses: Attribute.Relation<
       'plugin::multi-commerce.organization',
       'oneToMany',
-      'api::warehouse.warehouse'
+      'plugin::inventory.warehouse'
     >;
     vendors: Attribute.Relation<
       'plugin::multi-commerce.organization',
       'oneToMany',
-      'api::vendor.vendor'
+      'plugin::inventory.vendor'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
