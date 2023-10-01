@@ -13,7 +13,7 @@
     "build-plugins-multi-commerce": "cd src/plugins/multi-commerce && yarn && yarn build",
     "build-plugins-order-rules": "cd src/plugins/order-rules && yarn && yarn build",
     "build-plugins-invoice": "cd src/plugins/invoice && yarn && yarn build",
-    "build-plugins-organization": "cd src/plugins/invocie && yarn && yarn build",
+    "build-plugins-organization": "yarn && yarn build",
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {
