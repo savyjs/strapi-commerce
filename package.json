@@ -4,15 +4,16 @@
   "version": "1.0.0-develop.1",
   "description": "A Strapi application for ecommerce purpose",
   "scripts": {
-    "develop": "strapi develop",
+    "develop": "yarn build-plugins && concurrently  \"yarn:strapi develop\" \"yarn:dev-build-plugins\" ",
     "start": "strapi start",
     "strapi": "strapi",
     "build": "yarn build-plugins && strapi build",
-    "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order-rules -w\" \"yarn:build-plugins-invoice -w\"",
-    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-order-rules && yarn build-plugins-invoice",
+    "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-organization -w\"  \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order-rules -w\" \"yarn:build-plugins-invoice -w\"",
+    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-order-rules && yarn build-plugins-invoice && yarn build-plugins-organization",
     "build-plugins-multi-commerce": "cd src/plugins/multi-commerce && yarn && yarn build",
     "build-plugins-order-rules": "cd src/plugins/order-rules && yarn && yarn build",
     "build-plugins-invoice": "cd src/plugins/invoice && yarn && yarn build",
+    "build-plugins-organization": "cd src/plugins/organization && yarn && yarn build",
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {
