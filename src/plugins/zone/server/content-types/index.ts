@@ -1,3 +1,3 @@
-import zone from './country'
+import country from './country'
 
-export default {zone};
+export default {country};
