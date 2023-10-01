@@ -9,7 +9,7 @@
     "strapi": "strapi",
     "build": "yarn build-plugins && strapi build",
     "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-inventory -w\" \"yarn:build-plugins-contact -w\"  \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order -w\" \"yarn:build-plugins-invoice -w\" \"yarn:build-plugins-order\"  && \"yarn:build-plugins-zone -w\"  && \"yarn:build-plugins-sale -w\"  && \"yarn:build-plugins-product -w\"  ",
-    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-inventory  && y yarn build-plugins-order  && yarn build-plugins-zone  && yarn build-plugins-sale  && yarn build-plugins-product && yarn build-plugins-invoice && yarn build-plugins-contact",
+    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-inventory  && yarn build-plugins-order  && yarn build-plugins-zone  && yarn build-plugins-sale  && yarn build-plugins-product && yarn build-plugins-invoice && yarn build-plugins-contact",
     "build-plugins-multi-commerce": "cd src/plugins/multi-commerce && yarn && yarn build",
     "build-plugins-order": "cd src/plugins/order && yarn && yarn build",
     "build-plugins-invoice": "cd src/plugins/invoice && yarn && yarn build",
