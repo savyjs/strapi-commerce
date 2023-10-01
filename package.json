@@ -8,12 +8,12 @@
     "start": "strapi start",
     "strapi": "strapi",
     "build": "yarn build-plugins && strapi build",
-    "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-organization -w\"  \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order-rules -w\" \"yarn:build-plugins-invoice -w\"",
-    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-order-rules && yarn build-plugins-invoice && yarn build-plugins-organization",
+    "dev-build-plugins": "concurrently  \"yarn:generate-types\" \"yarn:build-plugins-contact -w\"  \"yarn:build-plugins-multi-commerce -w\" \"yarn:build-plugins-order -w\" \"yarn:build-plugins-invoice -w\"",
+    "build-plugins": "yarn build-plugins-multi-commerce && yarn build-plugins-order && yarn build-plugins-invoice && yarn build-plugins-contact",
     "build-plugins-multi-commerce": "cd src/plugins/multi-commerce && yarn && yarn build",
-    "build-plugins-order-rules": "cd src/plugins/order-rules && yarn && yarn build",
+    "build-plugins-order": "cd src/plugins/order && yarn && yarn build",
     "build-plugins-invoice": "cd src/plugins/invoice && yarn && yarn build",
-    "build-plugins-organization": "cd src/plugins/organizations && yarn && yarn build",
+    "build-plugins-contact": "yarn",
     "generate-types": "strapi ts:generate-types"
   },
   "devDependencies": {

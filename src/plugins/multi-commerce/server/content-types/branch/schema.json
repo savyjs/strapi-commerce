@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "stores",
+  "collectionName": "branches",
   "info": {
-    "singularName": "store",
-    "pluralName": "stores",
-    "displayName": "Store",
+    "singularName": "branch",
+    "pluralName": "branches",
+    "displayName": "Branch",
     "description": ""
   },
   "options": {
@@ -24,7 +24,7 @@
       },
       "type": "string"
     },
-    "domain": {
+    "full_name": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -32,30 +32,19 @@
       },
       "type": "string"
     },
-    "owner": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
-    "organization": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::organization.organization"
-    },
-    "logo": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false,
+    "code": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "string"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::organization.organization",
+      "inversedBy": "branches"
     },
     "active": {
       "pluginOptions": {
@@ -63,28 +52,47 @@
           "localized": true
         }
       },
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
-    "is_open": {
+    "is_default": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "boolean",
-      "default": true,
-      "required": true
+      "type": "boolean"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "address": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::address.address"
     },
-    "payment_methods": {
+    "owner": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::payment-method.payment-method",
-      "mappedBy": "store"
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

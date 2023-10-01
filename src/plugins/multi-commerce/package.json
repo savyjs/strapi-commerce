@@ -4,7 +4,7 @@
   "description": "A core plugin to run multiple commerces on Strapi.",
   "strapi": {
     "name": "multi-commerce-core",
-    "description": "Adding policies and structures to support multi organization and multi store commerce.",
+    "description": "Enhancing policies and frameworks to facilitate multi-organization and multi-store commerce.",
     "kind": "plugin"
   },
   "dependencies": {

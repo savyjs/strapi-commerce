@@ -1,11 +1,6 @@
 import {readdirSync} from 'fs'
 
-const plugins = {
-  'order-rules': {
-    enabled: true,
-    resolve: './src/plugins/order-rules'
-  },
-}
+const plugins = {}
 try {
   const pluginDirs = (source =>
     readdirSync(source, {withFileTypes: true})
