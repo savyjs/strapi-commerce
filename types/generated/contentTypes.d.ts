@@ -1042,6 +1042,872 @@ export interface PluginMultiCommerceOrganization extends Schema.CollectionType {
   };
 }
 
+export interface PluginProductBrand extends Schema.CollectionType {
+  collectionName: 'brands';
+  info: {
+    singularName: 'brand';
+    pluralName: 'brands';
+    displayName: 'Brand';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    full_name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logo: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    images: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    store: Attribute.Relation<
+      'plugin::product.brand',
+      'oneToOne',
+      'plugin::multi-commerce.store'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.brand',
+      'oneToMany',
+      'plugin::product.brand'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductAttribute extends Schema.CollectionType {
+  collectionName: 'attributes';
+  info: {
+    singularName: 'attribute';
+    pluralName: 'attributes';
+    displayName: 'Attribute';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    code: Attribute.String;
+    type: Attribute.String;
+    validation: Attribute.String;
+    is_required: Attribute.Boolean;
+    active: Attribute.Boolean;
+    is_unique: Attribute.Boolean;
+    is_filterable: Attribute.Boolean;
+    is_visible: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.attribute',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.attribute',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface PluginProductCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tax_id: Attribute.Integer & Attribute.Required;
+    active: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    visibility: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    sort_by_options: Attribute.JSON & Attribute.DefaultTo<[]>;
+    bread_crumbs: Attribute.JSON & Attribute.DefaultTo<[]>;
+    specifications: Attribute.JSON & Attribute.DefaultTo<[]>;
+    parent_id: Attribute.String & Attribute.Required;
+    items: Attribute.JSON & Attribute.DefaultTo<[]>;
+    number_columns: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2>;
+    order: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.category',
+      'oneToMany',
+      'plugin::product.category'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductCollection extends Schema.CollectionType {
+  collectionName: 'collections';
+  info: {
+    singularName: 'collection';
+    pluralName: 'collections';
+    displayName: 'Collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tax_id: Attribute.Integer & Attribute.Required;
+    is_selected: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    active: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    visibility: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    sort_by_options: Attribute.JSON & Attribute.DefaultTo<[]>;
+    bread_crumbs: Attribute.JSON & Attribute.DefaultTo<[]>;
+    specifications: Attribute.JSON & Attribute.DefaultTo<[]>;
+    parent_id: Attribute.String & Attribute.Required;
+    items: Attribute.JSON & Attribute.DefaultTo<[]>;
+    number_columns: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2>;
+    order: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.collection',
+      'oneToMany',
+      'plugin::product.collection'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductAttributeFamily extends Schema.CollectionType {
+  collectionName: 'attribute_families';
+  info: {
+    singularName: 'attribute-family';
+    pluralName: 'attribute-families';
+    displayName: 'Attribute family';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.JSON &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    store: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'oneToOne',
+      'plugin::multi-commerce.store'
+    >;
+    user: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    attribute_groups: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'manyToMany',
+      'plugin::product.attribute-group'
+    >;
+    code: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.attribute-family',
+      'oneToMany',
+      'plugin::product.attribute-family'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductAttributeGroup extends Schema.CollectionType {
+  collectionName: 'attribute_groups';
+  info: {
+    singularName: 'attribute-group';
+    pluralName: 'attribute-groups';
+    displayName: 'Attribute group';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    attribute_families: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'manyToMany',
+      'plugin::product.attribute-family'
+    >;
+    store: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'oneToOne',
+      'plugin::multi-commerce.store'
+    >;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    users_permissions_user: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    code: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.attribute-group',
+      'oneToMany',
+      'plugin::product.attribute-group'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductSpecificationGroup extends Schema.CollectionType {
+  collectionName: 'specification_groups';
+  info: {
+    singularName: 'specification-group';
+    pluralName: 'specification-groups';
+    displayName: 'Specification Group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.specification-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.specification-group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.specification-group',
+      'oneToMany',
+      'plugin::product.specification-group'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    type: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'goods'>;
+    parents: Attribute.Relation<
+      'plugin::product.product',
+      'oneToMany',
+      'plugin::product.product'
+    >;
+    sku: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+        maxLength: 255;
+      }>;
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    attribute_family: Attribute.Relation<
+      'plugin::product.product',
+      'oneToOne',
+      'plugin::product.attribute-family'
+    >;
+    stores: Attribute.Relation<
+      'plugin::product.product',
+      'oneToMany',
+      'plugin::multi-commerce.store'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::product.product',
+      'oneToMany',
+      'plugin::product.product'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginSalePrice extends Schema.CollectionType {
+  collectionName: 'prices';
+  info: {
+    singularName: 'price';
+    pluralName: 'prices';
+    displayName: 'Price';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    active: Attribute.Boolean & Attribute.Required;
+    primary: Attribute.Boolean & Attribute.Required;
+    quantity: Attribute.Integer & Attribute.Required;
+    sku: Attribute.String & Attribute.Required;
+    unit: Attribute.Enumeration<
+      ['item', 'box', 'hour', 'service', 'file', 'other']
+    > &
+      Attribute.Required;
+    multiple_currency: Attribute.Boolean & Attribute.Required;
+    commission_rate: Attribute.Float;
+    retail_price: Attribute.Float;
+    retail_old_price: Attribute.Float;
+    tax: Attribute.Float;
+    taxable: Attribute.Boolean & Attribute.Required;
+    min_allowed_order: Attribute.Integer;
+    max_allowed_order: Attribute.Integer;
+    bulk_step: Attribute.Enumeration<['step-1']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::sale.price',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::sale.price',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::sale.price',
+      'oneToMany',
+      'plugin::sale.price'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginSaleCoupon extends Schema.CollectionType {
+  collectionName: 'coupons';
+  info: {
+    singularName: 'coupon';
+    pluralName: 'coupons';
+    displayName: 'Coupon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    is_enabled: Attribute.Boolean & Attribute.Required;
+    coupon_code: Attribute.String & Attribute.Required;
+    discount: Attribute.String & Attribute.Required;
+    discount_type: Attribute.Enumeration<['flat', 'percentage']> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::sale.coupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::sale.coupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::sale.coupon',
+      'oneToMany',
+      'plugin::sale.coupon'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginSaleCurrency extends Schema.CollectionType {
+  collectionName: 'currencies';
+  info: {
+    singularName: 'currency';
+    pluralName: 'currencies';
+    displayName: 'Currency';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    currency_id: Attribute.String & Attribute.Required;
+    currency_code: Attribute.String & Attribute.Required;
+    currency_name: Attribute.String & Attribute.Required;
+    currency_symbol: Attribute.String & Attribute.Required;
+    price_precision: Attribute.Integer & Attribute.Required;
+    currency_format: Attribute.String & Attribute.Required;
+    is_base_currency: Attribute.Boolean & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::sale.currency',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::sale.currency',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::sale.currency',
+      'oneToMany',
+      'plugin::sale.currency'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface PluginZoneCountry extends Schema.CollectionType {
+  collectionName: 'countries';
+  info: {
+    singularName: 'country';
+    pluralName: 'countries';
+    displayName: 'country';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    code: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icon: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::zone.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::zone.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    url_path_id: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    localizations: Attribute.Relation<
+      'plugin::zone.country',
+      'oneToMany',
+      'plugin::zone.country'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface PluginUrlAliasPath extends Schema.CollectionType {
   collectionName: 'url_paths';
   info: {
@@ -1460,6 +2326,18 @@ declare module '@strapi/strapi' {
       'plugin::multi-commerce.store': PluginMultiCommerceStore;
       'plugin::multi-commerce.branch': PluginMultiCommerceBranch;
       'plugin::multi-commerce.organization': PluginMultiCommerceOrganization;
+      'plugin::product.brand': PluginProductBrand;
+      'plugin::product.attribute': PluginProductAttribute;
+      'plugin::product.category': PluginProductCategory;
+      'plugin::product.collection': PluginProductCollection;
+      'plugin::product.attribute-family': PluginProductAttributeFamily;
+      'plugin::product.attribute-group': PluginProductAttributeGroup;
+      'plugin::product.specification-group': PluginProductSpecificationGroup;
+      'plugin::product.product': PluginProductProduct;
+      'plugin::sale.price': PluginSalePrice;
+      'plugin::sale.coupon': PluginSaleCoupon;
+      'plugin::sale.currency': PluginSaleCurrency;
+      'plugin::zone.country': PluginZoneCountry;
       'plugin::url-alias.path': PluginUrlAliasPath;
       'plugin::url-alias.pattern': PluginUrlAliasPattern;
       'plugin::i18n.locale': PluginI18NLocale;
