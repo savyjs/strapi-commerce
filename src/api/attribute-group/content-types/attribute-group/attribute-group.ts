@@ -51,7 +51,7 @@ export interface AttributeGroup_NoRelations {
 export interface AttributeGroup_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  description?: string;
-  attribute_families?: AdminPanelRelationPropertyModification<AttributeFamily_Plain>[];
+  attribute_families?: AdminPanelRelationPropertyModification<AttributeFamily_Plain>;
   store?: AdminPanelRelationPropertyModification<Store_Plain>;
   active?: boolean;
   users_permissions_user?: AdminPanelRelationPropertyModification<User_Plain>;
