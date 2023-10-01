@@ -120,12 +120,6 @@
         }
       }
     },
-    "members": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "organizations"
-    },
     "active": {
       "pluginOptions": {
         "i18n": {
