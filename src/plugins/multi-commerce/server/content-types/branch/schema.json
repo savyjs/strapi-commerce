@@ -43,7 +43,7 @@
     "organization": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::organization.organization",
+      "target": "plugin::multi-commerce.organization",
       "inversedBy": "branches"
     },
     "active": {

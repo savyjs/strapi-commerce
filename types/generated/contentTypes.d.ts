@@ -558,7 +558,7 @@ export interface PluginMultiCommerceStore extends Schema.CollectionType {
     organization: Attribute.Relation<
       'plugin::multi-commerce.store',
       'oneToOne',
-      'api::organization.organization'
+      'plugin::multi-commerce.organization'
     >;
     logo: Attribute.Media &
       Attribute.SetPluginOptions<{
@@ -659,7 +659,7 @@ export interface PluginMultiCommerceBranch extends Schema.CollectionType {
     organization: Attribute.Relation<
       'plugin::multi-commerce.branch',
       'manyToOne',
-      'api::organization.organization'
+      'plugin::multi-commerce.organization'
     >;
     active: Attribute.Boolean &
       Attribute.SetPluginOptions<{

@@ -40,7 +40,7 @@
     "organization": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::organization.organization"
+      "target": "plugin::multi-commerce.organization"
     },
     "logo": {
       "allowedTypes": [
@@ -74,17 +74,6 @@
       "type": "boolean",
       "default": true,
       "required": true
-    },
-    "address": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::address.address"
-    },
-    "payment_methods": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::payment-method.payment-method",
-      "mappedBy": "store"
     }
   }
 }
