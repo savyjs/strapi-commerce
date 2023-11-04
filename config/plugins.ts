@@ -1,7 +1,6 @@
 import {readdirSync} from 'fs'
 
-const plugins = {
-}
+const plugins = {}
 try {
   const pluginDirs = (source =>
     readdirSync(source, {withFileTypes: true})

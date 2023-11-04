@@ -1,0 +1,163 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "organization_id": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "is_default_org": {
+      "type": "boolean",
+      "required": true
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "time_zone": {
+      "type": "string",
+      "required": true
+    },
+    "language_code": {
+      "type": "string",
+      "required": true
+    },
+    "date_format": {
+      "type": "string",
+      "required": true
+    },
+    "field_separator": {
+      "type": "string",
+      "required": true
+    },
+    "fiscal_year_start_month": {
+      "type": "integer",
+      "required": true
+    },
+    "tax_group_enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "industry_type": {
+      "type": "string",
+      "required": true
+    },
+    "stage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Development",
+        "Test",
+        "Production"
+      ],
+      "default": "Production",
+      "required": true
+    },
+    "full_name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": false
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "active": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
+    "has_branch": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
+    },
+    "branches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::multi-commerce.branch",
+      "mappedBy": "organization"
+    },
+    "currencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::sale.currency"
+    },
+    "warehouses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::inventory.warehouse"
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::inventory.vendor",
+      "mappedBy": "organization"
+    }
+  }
+}
