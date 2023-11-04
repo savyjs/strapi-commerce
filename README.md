@@ -54,4 +54,21 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+- **Marketplace Multi-Tenancy System**: Manages businesses and customers.
+  - *Organizations*: Entities owning and operating companies.
+    - *Companies*: Businesses managing stores.
+      - *Stores*: Primary entities for customer and admin interactions.
+        - *Customers*: Shoppers within stores.
+        - *Admin Users*: Store managers.
+        - *Roles and Permissions*: Access control framework.
+          - *User Roles*: Specific user roles.
+          - *Permissions*: Specific access rights.
+- **Identity and Access Management (IaM) System**: Manages authentication and authorization.
+  - *Realms*: User and client partitioning.
+    - *Clients*: Services and application authentication.
+      - *Client Scopes*: Client-specific permissions.
+    - *Realm Roles*: Access and permissions at the realm level.
+      - *Permissions*: Specific access rights.
+    - *Users*: Individuals with system access.
+      - *Groups*: Efficient organization of users and attributes.
+

@@ -17,23 +17,19 @@
   },
   "devDependencies": {
     "strapi-plugin-multi-commerce-core": "file:src/plugins/multi-commerce",
-    "pg": "^8.11.3",
     "concurrently": "^8.2.1",
     "@types/jest": "^29.5.5"
   },
   "dependencies": {
-    "@strapi-community/strapi-plugin-url-alias": "^1.0.0-alpha.8",
-    "@strapi/plugin-documentation": "4.14.0-alpha.0",
-    "@strapi/plugin-i18n": "4.14.0-alpha.0",
-    "@strapi/plugin-sentry": "4.14.0-alpha.0",
-    "@strapi/plugin-users-permissions": "4.14.0-alpha.0",
-    "@strapi/strapi": "^4.14.0-alpha.0",
+    "@strapi/plugin-documentation": "^4.15.0",
+    "@strapi/plugin-i18n": "^4.15.0",
+    "@strapi/plugin-sentry": "^4.15.0",
+    "@strapi/plugin-users-permissions": "^4.15.0",
+    "@strapi/strapi": "^4.15.0",
     "@zohocrm/typescript-sdk-2.0": "^7.0.0",
-    "better-sqlite3": "8.0.1",
-    "strapi-plugin-comments": "^2.2.12",
     "strapi-plugin-duplicate-button": "^1.1.12",
     "strapi-plugin-schemas-to-ts": "^1.1.9",
-    "strapi-plugin-timezone-select": "^1.0.0"
+    "mysql": "^2.18.1"
   },
   "author": {
     "name": "E-cmmerce core"
