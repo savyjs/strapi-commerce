@@ -32,7 +32,6 @@
     "@strapi/plugin-users-permissions": "^4.15.0",
     "@strapi/strapi": "^4.15.0",
     "@zohocrm/typescript-sdk-2.0": "^7.0.0",
-    "strapi-plugin-duplicate-button": "^1.1.12",
     "strapi-plugin-schemas-to-ts": "^1.1.9",
     "mysql": "^2.18.1"
   },
